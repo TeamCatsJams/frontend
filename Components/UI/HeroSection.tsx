@@ -1,6 +1,5 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import SearchBar from '../UI/SearchBar'
-import 
 
 type Props = {};
 
