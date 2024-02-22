@@ -12,7 +12,7 @@ function SearchResult({}: Props) {
   const { searchTerm } = useParams();
   const { user } = useAuth();
   console.log(searchTerm);
-  const { data, isLoading, isError, isSuccess } = useSearchTerm(
+  const { data, isLoading,  isSuccess } = useSearchTerm(
     user?.token as string,
     "uwu"
   );
