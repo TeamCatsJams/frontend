@@ -1,4 +1,4 @@
-import { Box, Stack, Grid} from "@mui/material";
+import { Box, Stack} from "@mui/material";
 import Navbar from "../UI/Navbar";
 import HeroSection from "../UI/HeroSection";
 import Pill1 from "./../../src/assets/PillBottlemed.svg"
