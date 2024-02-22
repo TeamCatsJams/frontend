@@ -8,7 +8,19 @@ function CustomThemeProvider(props: Props) {
     typography: {
       fontFamily: "ProductSans",
     },
+    components: {
+      MuiTextField: {
+        styleOverrides: {
+          root: {
+            '& .MuiOutlinedInput-root': {
+              borderRadius: 16,
+            },
+          },
+        },
+      },
+    },
   });
+
   return <ThemeProvider theme={theme}>{props.children}</ThemeProvider>;
 }
 

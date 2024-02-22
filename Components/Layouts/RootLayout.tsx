@@ -1,15 +1,14 @@
-import React, { ReactNode } from 'react'
+import { Box } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
-type Props = {children:ReactNode}
-
-function RootLayout(props: Props) {
+function RootLayout() {
   return (
-    
-
     <>
-            {props.children}
+      <Box minHeight={"100vh"} pt={'20px'}>
+        <Outlet />
+      </Box>
     </>
-  )
+  );
 }
 
-export default RootLayout
+export default RootLayout;
