@@ -1,8 +1,10 @@
 import { Avatar, Box, Container, Stack, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
 function Cards({}: Props) {
+  const navigate = useNavigate()
   return (
     <>
       <Box
@@ -13,6 +15,9 @@ function Cards({}: Props) {
         borderRadius={"16px"}
         sx={{
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+        }}
+        onClick= {()=>{
+          navigate('/profile/123')
         }}
       >
         {" "}

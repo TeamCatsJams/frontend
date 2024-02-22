@@ -2,9 +2,11 @@ import CustomButton from "../UI/Button";
 import Navbar from "../UI/Navbar";
 import { Avatar, Box, Container, Stack, Typography } from "@mui/material";
 import Tags from "../UI/Tags";
+import { useNavigate } from "react-router-dom";
 type Props = {};
 
 function DoctorProfile({}: Props) {
+  const navigate = useNavigate()
   return (
     <>
       <Navbar />
@@ -20,6 +22,9 @@ function DoctorProfile({}: Props) {
               variant="contained"
               content="Schedule Meeting"
               sx={{ borderRadius: "16px", boxShadow: "none" }}
+              onClick={()=>{
+                navigate('/123/appointment')
+              }}
             />
           </Stack>
           <Stack gap={"20px"}>
