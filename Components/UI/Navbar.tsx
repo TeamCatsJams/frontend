@@ -1,9 +1,12 @@
 import { Container, Box, Stack, Typography } from "@mui/material";
 import CustomButton from "../UI/Button";
+import { useAuth } from "../Providers/AuthProvider";
 
 type Props = {};
 
 function Navbar({}: Props) {
+  const {login,user} = useAuth()
+  console.log(user)
   return (
     <Container maxWidth={"xl"}>
       <Box minHeight={"72px"} p={'16px'} borderRadius={'16px'} sx={{
@@ -33,7 +36,9 @@ function Navbar({}: Props) {
                   height: "43px",
                   width: "137px",
                   boxShadow: "none",
+                
                 }}
+                onClick={login}
               />
             </Stack>
           </Box>
