@@ -15,7 +15,7 @@ function RouteProvider() {
   const routes = createBrowserRouter(createRoutesFromElements(<>
       <Route element={<RootLayout/>}>
         <Route path="/" element={<Home/>}></Route>
-        <Route path="/search/:searchterm" element={<SearchResult/>}></Route>
+        <Route path="/search/:searchTerm" element={<SearchResult/>}></Route>
       </Route>
   </>));
   return <RouterProvider router={routes}></RouterProvider>;
