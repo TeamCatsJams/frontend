@@ -6,6 +6,8 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
+
+
 import { auth } from "../../utils/firebase.utils";
 interface CustomUser {
   token: string;
@@ -47,9 +49,6 @@ function AuthProvider({ children }: AuthProviderProps) {
       // The signed-in user info.
       const user = result.user;
 
-      // IdP data available using getAdditionalUserInfo(result)
-      // ...
-
       setUser({ user: user, token: token as string });
     } catch (error) {
       // Handle Errors here.
@@ -59,7 +58,6 @@ function AuthProvider({ children }: AuthProviderProps) {
       // The email of the user's account used.
       const email = error.customData.email;
 
-      // The AuthCredential type that was used.
       const credential = GoogleAuthProvider.credentialFromError(error);
     }
   }

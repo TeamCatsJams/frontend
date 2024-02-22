@@ -1,13 +1,25 @@
-import { Stack, Typography, Box } from "@mui/material";
+import { Stack, Typography, Box, CircularProgress } from "@mui/material";
 import SearchNav from "../UI/SearchNav";
 import Sidebar from "../UI/Sidebar";
 import { useParams } from "react-router-dom";
 import Cards from "../UI/Cards";
+import useSearchTerm from "../API/useSearchTerm";
+import { useAuth } from "../Providers/AuthProvider";
+
 type Props = {};
 
 function SearchResult({}: Props) {
   const { searchTerm } = useParams();
+  const { user } = useAuth();
   console.log(searchTerm);
+  const { data, isLoading, isError, isSuccess } = useSearchTerm(
+    user?.token as string,
+    "uwu"
+  );
+
+  if (isSuccess) {
+    console.log(data);
+  }
 
   return (
     <>
@@ -26,13 +38,26 @@ function SearchResult({}: Props) {
               </Typography>{" "}
             </Typography>
             <Box>
-              <Box p={"20px"} sx={{display:"flex",flexWrap:'wrap',gap:'16px'}}>
-                <Cards />
-                <Cards />
-                <Cards />
-                <Cards />
-                <Cards />
-                <Cards />
+              <Box
+                p={"20px"}
+                sx={{ display: "flex", flexWrap: "wrap", gap: "16px" }}
+              >
+                {isLoading ? (
+                  <CircularProgress color="primary" />
+                ) : isSuccess ? (
+                  <>
+                    {data.data.map((item: any) => (
+                      <Cards
+                        key={item.id}
+                        name={item.full_name}
+                        location={item.location}
+                        designation={item.designation}
+                      />
+                    ))}
+                  </>
+                ) : (
+                  <>error</>
+                )}
               </Box>
             </Box>
           </Box>
