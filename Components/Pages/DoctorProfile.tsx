@@ -95,8 +95,8 @@ function DoctorProfile({}: Props) {
               }}
             >
               {" "}
-              <Container sx={{minWidth:'300px',maxWidth:'300px'}}>
-                <Stack  p={"20px"} gap={4}>
+              <Container sx={{ minWidth: "300px", maxWidth: "300px" }}>
+                <Stack p={"20px"} gap={4}>
                   <Typography>Country</Typography>
                   <Typography>Field</Typography>
                   <Typography>Bio</Typography>
