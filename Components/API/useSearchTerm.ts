@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { BASE_URL } from "../../constants";
 
-async function getAllDoctors(searchTerm: string, token: string) {
+async function getAllDoctors(_searchTerm: string, token: string) {
   const response = await fetch(BASE_URL + "api/v1/doctor", {
     headers: {
       "content-type": "application/json",
