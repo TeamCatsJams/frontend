@@ -8,6 +8,8 @@ function Calender({}: Props) {
         <FullCalendar
           plugins={[ dayGridPlugin ]}
           initialView="dayGridMonth"
+          height={"100%"}
+          
         />
       )
 }
