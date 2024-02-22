@@ -1,5 +1,5 @@
-import { Box, Container, Stack, TextField, Typography } from "@mui/material";
-import CustomButton from "./Button";
+import { Box, Container, Stack, Typography } from "@mui/material";
+import SearchBar from '../UI/SearchBar'
 
 type Props = {};
 
@@ -32,25 +32,9 @@ function HeroSection({}: Props) {
           justifyContent={"center"}
           alignItems={"center"}
           gap={4}
+          pt={'16px'}
         >
-          <TextField
-            label="Search"
-            variant="outlined"
-            sx={{ borderRadius: "20px" }}
-            fullWidth
-          />
-          <CustomButton
-            content="Search"
-            variant="contained"
-            sx={{
-              borderRadius: "16px",
-              height: "43px",
-              width: "137px",
-              boxShadow: "none",
-            }}
-          >
-            {" "}
-          </CustomButton>
+        <SearchBar variant="contained"/>
         </Stack>
       </Container>
     </>

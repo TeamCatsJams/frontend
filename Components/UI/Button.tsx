@@ -4,7 +4,6 @@ type Props = {
   type?: 'submit';
   variant: "text" | "contained" | "outlined";
   content: string;
-  onClick? : ()=>void ;
 };
 
 const CustomButton = (props: Props & ButtonProps) => {
