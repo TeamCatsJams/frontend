@@ -2,6 +2,7 @@ import { Stack, Typography, Box } from "@mui/material";
 import SearchNav from "../UI/SearchNav";
 import Sidebar from "../UI/Sidebar";
 import { useParams } from "react-router-dom";
+import Cards from "../UI/Cards";
 type Props = {};
 
 function SearchResult({}: Props) {
@@ -24,6 +25,16 @@ function SearchResult({}: Props) {
                 Doctors for: {searchTerm}
               </Typography>{" "}
             </Typography>
+            <Box>
+              <Box p={"20px"} sx={{display:"flex",flexWrap:'wrap',gap:'16px'}}>
+                <Cards />
+                <Cards />
+                <Cards />
+                <Cards />
+                <Cards />
+                <Cards />
+              </Box>
+            </Box>
           </Box>
           <Box
             ml={"150px"}
