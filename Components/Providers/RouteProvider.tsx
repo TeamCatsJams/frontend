@@ -11,6 +11,7 @@ import RootLayout from "../Layouts/RootLayout";
 import Home from "../Pages/Home";
 import SearchResult from "../Pages/SearchResult";
 import DoctorProfile from "../Pages/DoctorProfile";
+import Appointment from "../Pages/Appointment"
 
 function RouteProvider() {
   const routes = createBrowserRouter(
@@ -20,6 +21,7 @@ function RouteProvider() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/search/:searchTerm" element={<SearchResult />}></Route>
           <Route path="/profile/:doctorId" element={<DoctorProfile />}></Route>
+          <Route path="/:doctorId/appointment" element={<Appointment/>}></Route>
         </Route>
       </>
     )
